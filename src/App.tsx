@@ -5,6 +5,7 @@ import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 import Layout from "./components/Layout/Layout";
 import PrivateRoute from "./utils/PrivateRoute";
 import LoginPage from "./containers/LoginPage/LoginPage";
+import PostsPage from "./containers/PostsPage/PostsPage";
 
 
 const App = () => {
@@ -13,9 +14,10 @@ const App = () => {
     <Routes>
       <Route element={<Layout />}>
         <Route element={<PrivateRoute />}>
-          <Route path="/" element={<UsersPage />} />
+          <Route path="/story_sparkle" element={<UsersPage />} />
+          <Route path="/story_sparkle/users/:id/posts" element={<PostsPage />} />
         </Route>
-        <Route path={"/login"} element={<LoginPage/>} />
+        <Route path={"/story_sparkle/login"} element={<LoginPage/>} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

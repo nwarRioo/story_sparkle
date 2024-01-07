@@ -26,7 +26,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
                     {isAuth ?
                         <>
                             
-                            <NavLink className="NavBar-link" to={'/'}>Авторы</NavLink>
+                            <NavLink className="NavBar-link" to={'/story_sparkle'}>Авторы</NavLink>
                             <span className="NavBar-username">
                                 {username}
                             </span>
@@ -35,7 +35,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
                         :
                         <>
                             
-                            <NavLink className="NavBar-link" to={'/login'}>Войти</NavLink>
+                            <NavLink className="NavBar-link" to={'/story_sparkle/login'}>Войти</NavLink>
                         </>
                     }
                 </nav>

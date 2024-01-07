@@ -20,7 +20,7 @@ class PostsApi {
                 message: error.message
             };
             return response;
-        };
+        }
     };
 }
 
