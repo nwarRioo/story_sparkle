@@ -1,12 +1,14 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import { useDispatch } from 'react-redux'
 import { usersSlice } from "./users/users.slice";
+import authSlice from "./auth/auth.slice";
 
 
 const makeStore = () => {
     return configureStore({
         reducer: {
             users: usersSlice.reducer,
+            auth: authSlice.reducer
         }
     });
 };
