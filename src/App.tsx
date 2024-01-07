@@ -2,7 +2,9 @@
 import { Route, Routes } from "react-router-dom";
 import UsersPage from "./containers/UsersPage/UsersPage";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
-import Layout from "./components/components/Layout/Layout";
+import Layout from "./components/Layout/Layout";
+import PrivateRoute from "./utils/PrivateRoute";
+import LoginPage from "./containers/LoginPage/LoginPage";
 
 
 const App = () => {
@@ -10,11 +12,10 @@ const App = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {/* <Route element={<PrivateRoute />}> */}
+        <Route element={<PrivateRoute />}>
           <Route path="/" element={<UsersPage />} />
-          {/* <Route path="/users/:id/posts" element={<PostsPage />} /> */}
-        {/* </Route> */}
-        {/* <Route path={"/login"} element={<LoginPage/>} /> */}
+        </Route>
+        <Route path={"/login"} element={<LoginPage/>} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

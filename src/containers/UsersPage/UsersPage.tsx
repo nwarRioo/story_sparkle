@@ -1,7 +1,6 @@
 import { FunctionComponent, ReactElement, useEffect } from "react";
 import { AppDispatch, AppState } from "../../store/store";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
-import UsersList from "../../components/UsersList/UsersList";
 import { getUsers } from "../../store/users/users.slice";
 
 const UsersPage: FunctionComponent = (): ReactElement => {
@@ -19,11 +18,7 @@ const UsersPage: FunctionComponent = (): ReactElement => {
                 <div className="PostsPage-column">
                     <h2 className="PostsPage-title">Posts:</h2>
                     {showError ? <p className='PostsPage-error-text'>{errorMessage}</p> : null}
-                    {users === undefined || !users.length ?
-                        <p className='PostsPage-error-text'>No posts</p>
-                        :
-                        <UsersList users={users} />
-                    }
+                    
                 </div>
             </div>
         </div>
