@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, AppState } from '../../store/store'
-import eye from '../../assets/img/eye.svg';
+import eye from "../../assets/img/eye.svg";
 import eyeClosed from '../../assets/img/eye-closed.svg';
-import './LoginPage.css';
 import { clearError, login, setError } from '../../store/auth/auth.slice';
 import DarkButton from '../../components/UI/DarkButton/DarkButton';
 
@@ -49,7 +48,7 @@ const LoginPage: React.FunctionComponent = (): React.ReactElement => {
 
     useEffect(() => {
         if (isAuth) {
-            navigate('/story_sparkle');
+            navigate('/');
         }
     }, [isAuth]);
 
@@ -58,34 +57,34 @@ const LoginPage: React.FunctionComponent = (): React.ReactElement => {
     }
 
     return (
-        <div className="LoginPage-container">
-            <div className="LoginPage-background LoginPage-flex-row">
-                <div className="LoginPage-column">
-                    <h3 className="LoginPage-subtitle">Login:</h3>
-                    {errorMessage ? <p className='LoginPage-error-text'>{errorMessage}</p> : null}
-                    <div className="LoginPage-form-column">
+        <div>
+            <div>
+                <div>
+                    <h3>Login:</h3>
+                    {errorMessage ? <p>{errorMessage}</p> : null}
+                    <div>
                         <form onSubmit={submitHandler}>
-                            <div className="LoginPage-form-box">
-                                <label className="LoginPage-label" htmlFor='username'>Username:</label>
-                                <p className='LoginPage-error-text'>{usernameFieldErrorMessage}</p>
-                                <input className={'LoginPage-input LoginPage-input-password-name'}
+                            <div>
+                                <label htmlFor='username'>Username:</label>
+                                <p >{usernameFieldErrorMessage}</p>
+                                <input
                                     type="text"
                                     onChange={inputHandler}
                                     name={'username'}
                                     value={userValues.username}
                                 />
-                                <label className="LoginPage-label" htmlFor='password'>Password:</label>
-                                <p className='LoginPage-error-text'>{passwordFieldErrorMessage}</p>
-                                <label className='LoginPage-label-password LoginPage-input'>
-                                    <input className={'LoginPage-input-password LoginPage-input-password-name'}
+                                <label htmlFor='password'>Password:</label>
+                                <p>{passwordFieldErrorMessage}</p>
+                                <label >
+                                    <input
                                         type={passwordStatus ? 'text' : 'password'}
                                         onChange={inputHandler}
                                         name={'password'}
                                         value={userValues.password}
                                     />
-                                    <img src={passwordStatus ? eyeClosed : eye} alt="eye" className='LoginPage-input-eye' onClick={changePasswordStatus}/>
+                                    <img src={passwordStatus ? eyeClosed : eye} alt="eye" onClick={changePasswordStatus}/>
                                 </label>
-                                <div className="LoginPage-btn-row">
+                                <div>
                                     <DarkButton
                                         label={'Войти'}
                                     />

@@ -21,7 +21,7 @@ class UsersApi {
                 message: error.message
             };
             return response;
-        };
+        }
     };
 
     

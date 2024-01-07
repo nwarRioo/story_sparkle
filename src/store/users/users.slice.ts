@@ -49,7 +49,7 @@ export const usersSlice = createSlice({
                 } else {
                     const result = action.payload.result
                     state.users = result as IUser[];
-                };
+                }
             })
     }
 });

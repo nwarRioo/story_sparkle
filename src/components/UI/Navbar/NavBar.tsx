@@ -2,11 +2,10 @@ import { FunctionComponent, ReactElement } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import './NavBar.css';
 import { logout } from "../../../store/auth/auth.slice";
 import { AppDispatch, AppState } from "../../../store/store";
 
-const NavBar: FunctionComponent = (): ReactElement => {
+const Navbar: FunctionComponent = (): ReactElement => {
     const { username, isAuth } = useSelector((state: AppState) => state.auth, shallowEqual);
     const dispatch: AppDispatch = useDispatch();
     const location = useLocation()
@@ -17,25 +16,24 @@ const NavBar: FunctionComponent = (): ReactElement => {
     };
 
     return (
-        <header className={"NavBar-background"}>
-            <div className="NavBar-container">
-                <div className={"NavBar-logo"}>
+        <header className="header">
+            <div className="header__main_row">
+                <div className="header__main_row__left">
                     <Logo />
+                    <NavLink to={'/users'} className="header__link">Авторы</NavLink>
                 </div>
-                <nav className="NavBar-links-row">
+                <nav className="header__main_row__right">
                     {isAuth ?
                         <>
                             
-                            <NavLink className="NavBar-link" to={'/story_sparkle'}>Авторы</NavLink>
-                            <span className="NavBar-username">
+                            <span>
                                 {username}
                             </span>
-                            <button className="NavBar-link" onClick={logoutHandler}>Выйти</button>
+                            <button onClick={logoutHandler} className="header__link pink">Выйти</button>
                         </>
                         :
                         <>
-                            
-                            <NavLink className="NavBar-link" to={'/story_sparkle/login'}>Войти</NavLink>
+                            <NavLink to={'/login'} className="header__link pink">Войти</NavLink>
                         </>
                     }
                 </nav>
@@ -44,4 +42,4 @@ const NavBar: FunctionComponent = (): ReactElement => {
     );
 };
 
-export default NavBar;
+export default Navbar;

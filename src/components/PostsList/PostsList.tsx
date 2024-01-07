@@ -1,9 +1,6 @@
-import IPost from '../../interfaces/IPost';
+import IPostsProps from '../../interfaces/IProps/IPostsProps';
 import Post from './Post/Post';
 
-interface IPostsProps {
-    posts: IPost[]
-}
 
 const PostsList: React.FunctionComponent<IPostsProps> = ({posts}) => {
     return (
