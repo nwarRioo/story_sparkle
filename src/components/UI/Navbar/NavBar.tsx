@@ -25,7 +25,7 @@ const Navbar: FunctionComponent = (): ReactElement => {
                 <nav className="header__main_row__right">
                     {isAuth ?
                         <>
-                            <span>
+                            <span className="username">
                                 {username}
                             </span>
                             <button onClick={logoutHandler} className="header__link pink">Выйти</button>
