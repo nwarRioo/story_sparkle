@@ -13,18 +13,15 @@ const UsersPage: FunctionComponent = (): ReactElement => {
     }, []);
 
     return (
-        <div className="container">
-            <div className="usersPage">
-                <h2 className="usersPage__title">Авторы постов:</h2>
-                {showError ? <p>{errorMessage}</p> : null}
-                {users === undefined || !users.length ?
-                    <p className="usersPage__no_data">Авторов нет</p>
-                    :
-                    <UsersList users={users} />
-                }
-            </div>
+        <div className="usersPage">
+            <h2 className="usersPage__title">Авторы постов:</h2>
+            {showError ? <p>{errorMessage}</p> : null}
+            {users === undefined || !users.length ?
+                <p className="usersPage__no_data">Авторов нет</p>
+                :
+                <UsersList users={users} />
+            }
         </div>
-        
     );
 };
 

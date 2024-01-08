@@ -19,10 +19,10 @@ const PostsPage: FunctionComponent = (): ReactElement => {
     }, [users]);
 
     return (
-        <div>
-            <h2>Посты пользователя: {pickedUser.name}</h2>
+        <div className="postsPage">
+            <h2 className="postsPage__title">Посты пользователя <span className="postsPage__author">{pickedUser.name}</span></h2>
             {posts === undefined || !posts.length ?
-                <p>No posts</p>
+                <p className="postsPage__no_data">Постов нет</p>
                 :
                 <PostsList posts={posts} />
             }

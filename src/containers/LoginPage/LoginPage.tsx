@@ -57,40 +57,38 @@ const LoginPage: React.FunctionComponent = (): React.ReactElement => {
     }
 
     return (
-        <div className='container'>
-            <div className='loginPage'>
-                <div className='loginPage__form'>
-                    <h3>Вход:</h3>
-                    {errorMessage ? <p className='loginPage__error_text'>{errorMessage}</p> : null}
-                    <form onSubmit={submitHandler}>
-                        <label htmlFor='username' className='loginPage__label'>Пользователь:</label>
-                        <p className='loginPage__error_text'>{usernameFieldErrorMessage}</p>
+        <div className='loginPage'>
+            <div className='loginPage__form'>
+                <h3>Вход:</h3>
+                {errorMessage ? <p className='loginPage__error_text'>{errorMessage}</p> : null}
+                <form onSubmit={submitHandler}>
+                    <label htmlFor='username' className='loginPage__label'>Пользователь:</label>
+                    <p className='loginPage__error_text'>{usernameFieldErrorMessage}</p>
+                    <input
+                        className='loginPage__input'
+                        type="text"
+                        onChange={inputHandler}
+                        name={'username'}
+                        value={userValues.username}
+                    />
+                    <label htmlFor='password' className='loginPage__label'>Пароль:</label>
+                    <p className='loginPage__error_text'>{passwordFieldErrorMessage}</p>
+                    <label className='loginPage__label-password'>
                         <input
-                            className='loginPage__input'
-                            type="text"
+                            className='loginPage__input loginPage__input-password'
+                            type={passwordStatus ? 'text' : 'password'}
                             onChange={inputHandler}
-                            name={'username'}
-                            value={userValues.username}
+                            name={'password'}
+                            value={userValues.password}
                         />
-                        <label htmlFor='password' className='loginPage__label'>Пароль:</label>
-                        <p className='loginPage__error_text'>{passwordFieldErrorMessage}</p>
-                        <label className='loginPage__label-password'>
-                            <input
-                                className='loginPage__input loginPage__input-password'
-                                type={passwordStatus ? 'text' : 'password'}
-                                onChange={inputHandler}
-                                name={'password'}
-                                value={userValues.password}
-                            />
-                            <img src={passwordStatus ? eyeClosed : eye} alt="eye" onClick={changePasswordStatus}/>
-                        </label>
-                        <div>
-                            <DarkButton
-                                label={'Войти'}
-                            />
-                        </div>
-                    </form>
-                </div>
+                        <img src={passwordStatus ? eyeClosed : eye} alt="eye" onClick={changePasswordStatus}/>
+                    </label>
+                    <div>
+                        <DarkButton
+                            label={'Войти'}
+                        />
+                    </div>
+                </form>
             </div>
         </div>
     );

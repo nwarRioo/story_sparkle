@@ -17,26 +17,30 @@ export const postsSlice = createSlice({
     name: namespace,
     initialState: {
         posts: [] as IPost[],
-        loading: false
+        loading: false,
+        showError: false,
+        errorMessage: ""
     } as IPostsState,
     reducers: {
         clearPosts(state) {
             state.posts = [];
+            state.showError = false;
+            state.errorMessage = ""
         }
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getPostsByUserId.rejected, () => {
-                // state.showError = true;
-                // state.errorMessage = 'Connection error';
+            .addCase(getPostsByUserId.rejected, (state) => {
+                state.showError = true;
+                state.errorMessage = 'Connection error';
             })
             .addCase(getPostsByUserId.pending, (state) => {
                 state.loading = true
             })
             .addCase(getPostsByUserId.fulfilled, (state, action) => {
                 if (action.payload.status === 0) {
-                    // state.showError = true;
-                    // state.errorMessage = action.payload.message;
+                    state.showError = true;
+                    state.errorMessage = action.payload.message;
                 } else {
                     const result = action.payload.result
                     state.posts = result as IPost[];

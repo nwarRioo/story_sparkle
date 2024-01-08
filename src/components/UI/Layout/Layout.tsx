@@ -8,7 +8,7 @@ const Layout: React.FunctionComponent = (): React.ReactElement => {
         <div className="app-container">
             <img src={backgroundImage} alt="background" className="layout__background" />
             <Navbar />
-            <main>
+            <main className="container">
                 <Outlet />
             </main>
         </div>

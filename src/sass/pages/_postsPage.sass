@@ -1,0 +1,39 @@
+.postsPage 
+    position: relative
+    z-index: 100
+    display: flex
+    justify-content: center
+    flex-direction: column
+    margin-bottom: 40px
+    &__title
+        margin: 20px 0
+        color: white
+    &__noe_data
+        color: var(--pink)
+    &__author
+        color: var(--green)
+
+.postsList
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+.post
+    padding: 20px
+    border: 2px solid white
+    border-radius: 10px
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    transition: 0.3s
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+    &__title
+        margin-bottom: 10px
+    &__title, &__text
+        color: white
+        line-height: 1.5
+    &__span
+        color: var(--light-green)
+        font-weight: 500
+    
