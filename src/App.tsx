@@ -13,12 +13,12 @@ const App = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<HomePage />}/>
+        <Route path="/story_sparkle" element={<HomePage />}/>
         <Route element={<PrivateRoute />}>
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/users/:id/posts" element={<PostsPage />} />
+          <Route path="/story_sparkle/users" element={<UsersPage />} />
+          <Route path="/story_sparkle/users/:id/posts" element={<PostsPage />} />
         </Route>
-        <Route path={"/login"} element={<LoginPage/>} />
+        <Route path={"/story_sparkle/login"} element={<LoginPage/>} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

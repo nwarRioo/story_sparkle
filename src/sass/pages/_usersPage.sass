@@ -1,0 +1,70 @@
+.usersPage 
+    position: relative
+    z-index: 100
+    display: flex
+    justify-content: center
+    flex-direction: column
+    &__title
+        margin: 20px 0
+        color: white
+    &__noe_data
+        color: var(--pink)
+
+.usersList
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+.user 
+    padding: 20px
+    border: 2px solid white
+    border-radius: 10px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    transition: 0.3s
+    backdrop-filter: blur(2px)
+    -webkit-backdrop-filter: blur(10px)
+    cursor: pointer
+    &:hover
+        box-shadow: 0 0 30px var(--green)
+        scale: 1.02
+        background: var(--green)
+    &__name
+        position: relative
+        color: white
+    &__email
+        position: relative
+        color: white  
+    &::before
+        content: ""
+        position: absolute
+        inset: 2px
+        background: var(--background)
+        border-radius: 8px
+    &:hover &__name
+        color: var(--green)
+    &__animate
+        position: absolute
+        inset: 0
+        display: block
+        &::before
+            content: ""
+            position: absolute
+            top: -2px
+            left: 90%
+            width: 20px
+            height: 4px
+            transform: translateX(-50%) 
+            transition: 0.7s ease-in-out
+    &:hover &__animate::before
+        width: 40px
+        height: 8px
+        top: -3px
+        left: 10%
+        background: white
+        box-shadow: 0 0 20px var(--orange)
+    
+        
+
+        

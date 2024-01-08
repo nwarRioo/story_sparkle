@@ -48,7 +48,7 @@ const LoginPage: React.FunctionComponent = (): React.ReactElement => {
 
     useEffect(() => {
         if (isAuth) {
-            navigate('/');
+            navigate('/story_sparkle/users');
         }
     }, [isAuth]);
 

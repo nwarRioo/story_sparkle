@@ -5,7 +5,7 @@ import IUsersListProps from "../../interfaces/IProps/IUserListProps";
 
 const UsersList: FC<IUsersListProps> = ({users}) => {
     return (
-        <div>
+        <div className="usersList">
             {users.map(user => {
                 return <User user={user} key={user.id}/>
             })}

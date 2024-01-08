@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Logo: React.FunctionComponent = () => {
     return (
-        <Link to={'/'} className="logo_link">
+        <Link to={'/story_sparkle'} className="logo_link">
             StorySparkle
         </Link>
     );

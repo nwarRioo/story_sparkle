@@ -12,7 +12,7 @@ const PostsPage: FunctionComponent = (): ReactElement => {
     
     useEffect(() => {
         dispatch(getPostsByUserId(pickedUser.id));
-    }, []);
+    }, [users]);
 
     useEffect(() => {
         dispatch(clearPosts())

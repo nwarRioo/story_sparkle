@@ -12,13 +12,14 @@ const User: FC<IUserProps> = ({user}) => {
     const clickHandler = (e: MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         dispatch(pickUser(user));
-        navigate(`/users/${user.id}/posts`);
+        navigate(`${user.id}/posts`);
     };
 
     return (
-        <div onClick={clickHandler}>
-            <h1>{user.name}</h1>
-            <h3>{user.email}</h3>
+        <div onClick={clickHandler} className="user">
+            <i className="user__animate"></i>
+            <h1 className="user__name">{user.name}</h1>
+            <h3 className="user__email">{user.email}</h3>
         </div>
     )
 }
