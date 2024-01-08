@@ -1,0 +1,61 @@
+.loginPage
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    z-index: 100
+    &__form 
+        backdrop-filter: blur(2px)
+        -webkit-backdrop-filter: blur(10px)
+        margin-top: 5%
+        padding: 30px 50px
+        border-radius: 10px
+        border: 1px solid var(--light-green)
+    form
+        display: flex
+        flex-direction: column
+        gap: 5px
+        width: 100%
+    h3
+        color: white
+        text-align: center
+        margin-bottom: 20px
+    &__label
+        font-size: 15px
+        color: white
+        font-weight: 700
+    &__error_text
+        color: var(--pink)
+        font-weight: 600
+        font-size: 14px
+        margin-bottom: 10px
+        overflow-wrap: break-word
+        text-align: center
+        text-transform: uppercase
+        line-height: 100%
+    &__input
+        border: 1px solid lightgray
+        border-radius: 2px
+        line-height: 135%
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+        margin-bottom: 5px
+        flex-grow: 1
+        font-size: 15px
+        font-weight: 500
+        outline: none
+        color: #555
+        padding: 8px
+    &__input-password
+        border: none
+        padding-right: 50px
+        outline: none
+    &__label-password 
+        position: relative
+        margin-bottom: 10px
+    img
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translate(-50%, -50%)
+        width: 10%
+

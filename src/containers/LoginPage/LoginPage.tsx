@@ -42,7 +42,7 @@ const LoginPage: React.FunctionComponent = (): React.ReactElement => {
         if (userValues.username === 'user' && userValues.password === 'password') {
             dispatch(login(userValues.username));
         } else {
-            dispatch(setError('Неверное имя пользователя или пароль.'));
+            dispatch(setError('Неверные данные'));
         }
     };
 
@@ -57,41 +57,39 @@ const LoginPage: React.FunctionComponent = (): React.ReactElement => {
     }
 
     return (
-        <div>
-            <div>
-                <div>
-                    <h3>Login:</h3>
-                    {errorMessage ? <p>{errorMessage}</p> : null}
-                    <div>
-                        <form onSubmit={submitHandler}>
-                            <div>
-                                <label htmlFor='username'>Username:</label>
-                                <p >{usernameFieldErrorMessage}</p>
-                                <input
-                                    type="text"
-                                    onChange={inputHandler}
-                                    name={'username'}
-                                    value={userValues.username}
-                                />
-                                <label htmlFor='password'>Password:</label>
-                                <p>{passwordFieldErrorMessage}</p>
-                                <label >
-                                    <input
-                                        type={passwordStatus ? 'text' : 'password'}
-                                        onChange={inputHandler}
-                                        name={'password'}
-                                        value={userValues.password}
-                                    />
-                                    <img src={passwordStatus ? eyeClosed : eye} alt="eye" onClick={changePasswordStatus}/>
-                                </label>
-                                <div>
-                                    <DarkButton
-                                        label={'Войти'}
-                                    />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+        <div className='container'>
+            <div className='loginPage'>
+                <div className='loginPage__form'>
+                    <h3>Вход:</h3>
+                    {errorMessage ? <p className='loginPage__error_text'>{errorMessage}</p> : null}
+                    <form onSubmit={submitHandler}>
+                        <label htmlFor='username' className='loginPage__label'>Пользователь:</label>
+                        <p className='loginPage__error_text'>{usernameFieldErrorMessage}</p>
+                        <input
+                            className='loginPage__input'
+                            type="text"
+                            onChange={inputHandler}
+                            name={'username'}
+                            value={userValues.username}
+                        />
+                        <label htmlFor='password' className='loginPage__label'>Пароль:</label>
+                        <p className='loginPage__error_text'>{passwordFieldErrorMessage}</p>
+                        <label className='loginPage__label-password'>
+                            <input
+                                className='loginPage__input loginPage__input-password'
+                                type={passwordStatus ? 'text' : 'password'}
+                                onChange={inputHandler}
+                                name={'password'}
+                                value={userValues.password}
+                            />
+                            <img src={passwordStatus ? eyeClosed : eye} alt="eye" onClick={changePasswordStatus}/>
+                        </label>
+                        <div>
+                            <DarkButton
+                                label={'Войти'}
+                            />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

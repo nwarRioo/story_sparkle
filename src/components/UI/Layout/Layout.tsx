@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import backgroundImage from "../../../assets/img/homepage.png";
+import backgroundImage from '../../../assets/img/homepage.png';
 
 
 const Layout: React.FunctionComponent = (): React.ReactElement => {

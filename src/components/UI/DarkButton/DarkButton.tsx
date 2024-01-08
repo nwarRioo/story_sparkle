@@ -5,6 +5,7 @@ const DarkButton: React.FunctionComponent<IDarkButtonProps> = (props: IDarkButto
         <button
             onClick={props.click === undefined ? undefined : props.click}
             disabled={props.disabled === undefined ? false : props.disabled}
+            className='darkButton'
         >
             {props.label}
         </button>
