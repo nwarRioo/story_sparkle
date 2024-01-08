@@ -5,10 +5,6 @@
     --pink: #ff3998
     --green: #39ffa0
     --light-green: #84e6b5
-    --light-orange: #fff0e8
-    --accent-color1: #ffffff
-    --accent-color2: #555555
-    --accent-color3: #cccccc
     --background: #111111
     --font-family: 'Montserrat', sans-serif
 
@@ -26,5 +22,9 @@
     position: relative
 
 .container 
-    width: 1020px
+    max-width: 1020px
     margin: 0 auto
+    +tablet
+        padding: 0 10px
+    +smartphone
+        padding: 0 15px

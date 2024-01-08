@@ -1,7 +1,13 @@
 .homePage
-    margin-top: 50px
+    margin: 50px 0
     position: relative
     z-index: 100
+    border-radius: 10px
+    +tablet
+        backdrop-filter: blur(3px)
+        -webkit-backdrop-filter: blur(3px)
+        margin: 20px 0
+        padding: 10px
     &__title
         color: white
         span
@@ -17,6 +23,8 @@
         color: white
         margin-top: 15px
         font-family: var(--font-family)
+        +smartphone
+            width: 100%
     &__quotes
         color: var(--green)
         font-size: 18px

@@ -25,7 +25,6 @@ const Navbar: FunctionComponent = (): ReactElement => {
                 <nav className="header__main_row__right">
                     {isAuth ?
                         <>
-                            
                             <span>
                                 {username}
                             </span>

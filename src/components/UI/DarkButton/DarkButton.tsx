@@ -1,13 +1,10 @@
+import { FC } from 'react';
 import IDarkButtonProps from '../../../interfaces/IProps/IDarkButtonProps';
 
-const DarkButton: React.FunctionComponent<IDarkButtonProps> = (props: IDarkButtonProps) => {
+const DarkButton: FC<IDarkButtonProps> = ({label}) => {
     return (
-        <button
-            onClick={props.click === undefined ? undefined : props.click}
-            disabled={props.disabled === undefined ? false : props.disabled}
-            className='darkButton'
-        >
-            {props.label}
+        <button className='darkButton'>
+            {label}
         </button>
     );
 };

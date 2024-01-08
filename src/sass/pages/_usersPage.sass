@@ -27,6 +27,10 @@
     backdrop-filter: blur(2px)
     -webkit-backdrop-filter: blur(10px)
     cursor: pointer
+    +smartphone
+        padding: 10px
+        flex-direction: column
+        align-items: flex-start
     &:hover
         box-shadow: 0 0 30px var(--green)
         scale: 1.02
@@ -34,6 +38,8 @@
     &__name
         position: relative
         color: white
+        +smartphone
+            font-size: 1.8em
     &__email
         position: relative
         color: white  
@@ -65,7 +71,3 @@
         left: 10%
         background: white
         box-shadow: 0 0 20px var(--orange)
-    
-        
-
-        

@@ -1,7 +1,5 @@
 .loginPage
-    display: flex
-    align-items: center
-    justify-content: center
+    +flex_center
     position: relative
     z-index: 100
     &__form 
@@ -37,25 +35,25 @@
         border: 1px solid lightgray
         border-radius: 2px
         line-height: 135%
-        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+        font-family: Inter, system-ui, sans-serif
         margin-bottom: 5px
         flex-grow: 1
         font-size: 15px
         font-weight: 500
         outline: none
-        color: #555
+        color: white
         padding: 8px
+        background: transparent
     &__input-password
-        border: none
         padding-right: 50px
         outline: none
     &__label-password 
         position: relative
+        display: flex
         margin-bottom: 10px
     img
         position: absolute
         right: 0
-        top: 50%
+        top: 45%
         transform: translate(-50%, -50%)
         width: 10%
-
